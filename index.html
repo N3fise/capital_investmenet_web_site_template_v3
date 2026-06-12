@@ -10,7 +10,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 text-slate-800 font-sans antialiased">
-
+<!-- TOP MARKET TICKER BAND -->
+<div class="bg-slate-950 text-white border-b border-slate-800 text-xs py-2 overflow-hidden relative">
+    <div class="flex whitespace-nowrap animate-[marquee_25s_linear_infinite] hover:[animation-play-state:paused] space-x-12 px-6">
+        <!-- Item 1 -->
+        <div class="flex items-center space-x-2">
+            <span data-lang="ticker-sp" class="font-semibold text-slate-400">S&P 500</span>
+            <span class="font-mono font-bold">5,240.20</span>
+            <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.45%</span>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex items-center space-x-2">
+            <span data-lang="ticker-nasdaq" class="font-semibold text-slate-400">NASDAQ</span>
+            <span class="font-mono font-bold">18,320.50</span>
+            <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.82%</span>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex items-center space-x-2">
+            <span data-lang="ticker-gold" class="font-semibold text-slate-400">Gold</span>
+            <span class="font-mono font-bold">$2,345.80</span>
+            <span class="text-rose-500 font-semibold font-mono"><i class="fa-solid fa-caret-down mr-0.5"></i>-0.12%</span>
+        </div>
+        <!-- Item 4 -->
+        <div class="flex items-center space-x-2">
+            <span data-lang="ticker-btc" class="font-semibold text-slate-400">Bitcoin</span>
+            <span class="font-mono font-bold">$68,420.00</span>
+            <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+2.15%</span>
+        </div>
+        <!-- Item 5 -->
+        <div class="flex items-center space-x-2">
+            <span data-lang="ticker-eur" class="font-semibold text-slate-400">EUR/USD</span>
+            <span class="font-mono font-bold">1.0845</span>
+            <span class="text-rose-500 font-semibold font-mono"><i class="fa-solid fa-caret-down mr-0.5"></i>-0.04%</span>
+        </div>
+        <!-- Tekrar eden öğeler (Sonsuz döngü hissi yaratmak için Tailwind animasyonlarında kopyalanır) -->
+        <div class="flex items-center space-x-2">
+            <span data-lang="ticker-sp" class="font-semibold text-slate-400">S&P 500</span>
+            <span class="font-mono font-bold">5,240.20</span>
+            <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.45%</span>
+        </div>
+        <div class="flex items-center space-x-2">
+            <span data-lang="ticker-nasdaq" class="font-semibold text-slate-400">NASDAQ</span>
+            <span class="font-mono font-bold">18,320.50</span>
+            <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.82%</span>
+        </div>
+        <div class="flex items-center space-x-2">
+            <span data-lang="ticker-gold" class="font-semibold text-slate-400">Gold</span>
+            <span class="font-mono font-bold">$2,345.80</span>
+            <span class="text-rose-500 font-semibold font-mono"><i class="fa-solid fa-caret-down mr-0.5"></i>-0.12%</span>
+        </div>
+    </div>
+</div>
     <!-- 1. HEADER (NAVIGATION) -->
     <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -221,47 +271,50 @@
     <!-- MULTI-LANGUAGE JAVASCRIPT MECHANISM -->
     <script>
         const translations = {
-            en: {
-                "nav-home": "Home", "nav-about": "About Us", "nav-services": "Services", "nav-why": "Why Choose Us", "nav-contact": "Contact", "cta-btn": "Start Investing",
-                "hero-title": "Secure Your Future, <br><span class='text-amber-500'>Maximize Your Capital.</span>",
-                "hero-desc": "Navigate global markets with confidence. Capital Investment provides data-driven strategies and expert guidance to grow your wealth sustainably.",
-                "hero-cta-1": "Explore Services", "hero-cta-2": "Get in Touch",
-                "metric-1": "Assets Under Management", "metric-2": "Active Investors", "metric-3": "Avg. Annual Growth", "metric-4": "Expert Advisors",
-                "services-title": "Our Core Services", "services-subtitle": "Tailored financial solutions designed to protect your wealth and generate long-term market outperformance.",
-                "s1-title": "Portfolio Management", "s1-desc": "Tailored, risk-optimized investment strategies custom built for individuals and institutions.",
-                "s2-title": "Corporate Finance", "s2-desc": "Advisory services for mergers & acquisitions (M&A), capital raising, and corporate growth.",
-                "s3-title": "Real Estate & Funds", "s3-desc": "High-yield institutional real estate funds and alternative real asset structures.",
-                "s4-title": "Venture Capital", "s4-desc": "Early-stage equity funding and strategic networks for high-growth technology startups.",
-                "why-title": "Why Sophisticated Investors <br>Choose Capital Investment",
-                "why-desc": "We maintain an unwavering commitment to corporate governance, world-class asset allocation methodologies, and aligning our success directly with our clients.",
-                "w1-title": "Data-Driven Insights", "w1-desc": "Advanced market analytics and quantitative forecasting tools drive every single decision.",
-                "w2-title": "Transparency & Integrity", "w2-desc": "Clear, real-time client reporting dashboards and absolute regulatory compliance.",
-                "badge-title": "Institutional Grade Security", "badge-desc": "Your wealth is managed under strict international fiduciary standards, audited regularly by independent bodies.",
-                "contact-title": "Let's Build Something Great Together", "contact-desc": "Get in touch with our advisory desk to learn how we can optimize your corporate balance sheet or private wealth portfolio.",
-                "form-title": "Request a Consultation", "form-name": "Full Name", "form-email": "Email Address", "form-btn": "Submit Request", "footer-rights": "All rights reserved.",
-                "footer-disclaimer": "Disclaimer: High-risk financial services. Past performance does not guarantee future results. The information provided on this website is for informational purposes only and does not constitute formal financial or investment advice."
-            },
-            tr: {
-                "nav-home": "Ana Sayfa", "nav-about": "Hakkımızda", "nav-services": "Hizmetler", "nav-why": "Neden Biz?", "nav-contact": "İletişim", "cta-btn": "Yatırıma Başla",
-                "hero-title": "Geleceğinizi Güvenceye Alın, <br><span class='text-amber-500'>Sermayenizi Büyütün.</span>",
-                "hero-desc": "Küresel pazarlarda güvenle hareket edin. Capital Investment, varlığınızı sürdürülebilir şekilde büyütmek için veriye dayalı stratejiler ve uzman rehberliği sunar.",
-                "hero-cta-1": "Hizmetleri İnceleyin", "hero-cta-2": "İletişime Geçin",
-                "metric-1": "Yönetilen Toplam Varlık", "metric-2": "Aktif Yatırımcı", "metric-3": "Ortalama Yıllık Büyüme", "metric-4": "Uzman Danışman",
-                "services-title": "Temel Hizmetlerimiz", "services-subtitle": "Varlığınızı korumak ve uzun vadeli piyasa performansı elde etmek için tasarlanmış özel finansal çözümler.",
-                "s1-title": "Portföy Yönetimi", "s1-desc": "Bireyler ve kurumlar için özel olarak oluşturulmuş, risk optimizasyonlu yatırım stratejileri.",
-                "s2-title": "Kurumsal Finansman", "s2-desc": "Birleşme ve satın almalar (M&A), sermaye yaratma ve kurumsal büyüme için danışmanlık hizmetleri.",
-                "s3-title": "Gayrimenkul & Fonlar", "s3-desc": "Yüksek getirili kurumsal gayrimenkul fonları ve alternatif reel varlık yapıları.",
-                "s4-title": "Risk Sermayesi", "s4-desc": "Yüksek büyüme potansiyeline sahip teknoloji girişimleri için erken aşama sermaye finansmanı ve stratejik ağlar.",
-                "why-title": "Deneyimli Yatırımcılar Neden <br>Capital Investment'ı Seçiyor?",
-                "why-desc": "Kurumsal yönetime, dünya standartlarında varlık dağıtım metodolojilerine ve başarımızı doğrudan müşterilerimizle uyumlu hale getirmeye sarsılmaz bir bağlılık gösteriyoruz.",
-                "w1-title": "Veriye Dayalı Analizler", "w1-desc": "Gelişmiş piyasa analitiği ve nicel tahmin araçları her bir kararımıza yön verir.",
-                "w2-title": "Şeffaflık & Dürüstlük", "w2-desc": "Net, gerçek zamanlı müşteri raporlama panelleri ve mutlak yasal uyumluluk.",
-                "badge-title": "Kurumsal Düzeyde Güvenlik", "badge-desc": "Varlığınız, bağımsız kuruluşlarca düzenli olarak denetlenen, katı uluslararası mütevelli standartları altında yönetilir.",
-                "contact-title": "Birlikte Harika Bir Gelecek İnşa Edelim", "contact-desc": "Kurumsal bilançonuzu veya özel varlık portföyünüzü nasıl optimize edebileceğimizi öğrenmek için danışma masamızla iletişime geçin.",
-                "form-title": "Danışmanlık Talep Edin", "form-name": "Ad Soyad", "form-email": "E-posta Adresi", "form-btn": "Talebi Gönder", "footer-rights": "Tüm hakları saklıdır.",
-                "footer-disclaimer": "Yasal Uyarı: Yüksek riskli finansal hizmetler. Geçmiş performans, gelecekteki sonuçların garantisi değildir. Bu web sitesinde sağlanan bilgiler yalnızca bilgilendirme amaçlıdır ve resmi bir finans veya yatırım tavsiyesi niteliği taşımaz."
-            },
-            zh: {
+    en: {
+        "ticker-sp": "S&P 500", "ticker-nasdaq": "NASDAQ", "ticker-gold": "Gold", "ticker-btc": "Bitcoin", "ticker-eur": "EUR/USD",
+        "nav-home": "Home", "nav-about": "About Us", "nav-services": "Services", "nav-why": "Why Choose Us", "nav-contact": "Contact", "cta-btn": "Start Investing",
+        "hero-title": "Secure Your Future, <br><span class='text-amber-500'>Maximize Your Capital.</span>",
+        "hero-desc": "Navigate global markets with confidence. Capital Investment provides data-driven strategies and expert guidance to grow your wealth sustainably.",
+        "hero-cta-1": "Explore Services", "hero-cta-2": "Get in Touch",
+        "metric-1": "Assets Under Management", "metric-2": "Active Investors", "metric-3": "Avg. Annual Growth", "metric-4": "Expert Advisors",
+        "services-title": "Our Core Services", "services-subtitle": "Tailored financial solutions designed to protect your wealth and generate long-term market outperformance.",
+        "s1-title": "Portfolio Management", "s1-desc": "Tailored, risk-optimized investment strategies custom built for individuals and institutions.",
+        "s2-title": "Corporate Finance", "s2-desc": "Advisory services for mergers & acquisitions (M&A), capital raising, and corporate growth.",
+        "s3-title": "Real Estate & Funds", "s3-desc": "High-yield institutional real estate funds and alternative real asset structures.",
+        "s4-title": "Venture Capital", "s4-desc": "Early-stage equity funding and strategic networks for high-growth technology startups.",
+        "why-title": "Why Sophisticated Investors <br>Choose Capital Investment",
+        "why-desc": "We maintain an unwavering commitment to corporate governance, world-class asset allocation methodologies, and aligning our success directly with our clients.",
+        "w1-title": "Data-Driven Insights", "w1-desc": "Advanced market analytics and quantitative forecasting tools drive every single decision.",
+        "w2-title": "Transparency & Integrity", "w2-desc": "Clear, real-time client reporting dashboards and absolute regulatory compliance.",
+        "badge-title": "Institutional Grade Security", "badge-desc": "Your wealth is managed under strict international fiduciary standards, audited regularly by independent bodies.",
+        "contact-title": "Let's Build Something Great Together", "contact-desc": "Get in touch with our advisory desk to learn how we can optimize your corporate balance sheet or private wealth portfolio.",
+        "form-title": "Request a Consultation", "form-name": "Full Name", "form-email": "Email Address", "form-btn": "Submit Request", "footer-rights": "All rights reserved.",
+        "footer-disclaimer": "Disclaimer: High-risk financial services. Past performance does not guarantee future results. The information provided on this website is for informational purposes only and does not constitute formal financial or investment advice."
+    },
+    tr: {
+        "ticker-sp": "S&P 500 Endeksi", "ticker-nasdaq": "NASDAQ Endeksi", "ticker-gold": "Altın (Ons)", "ticker-btc": "Bitcoin", "ticker-eur": "Euro / Dolar",
+        "nav-home": "Ana Sayfa", "nav-about": "Hakkımızda", "nav-services": "Hizmetler", "nav-why": "Neden Biz?", "nav-contact": "İletişim", "cta-btn": "Yatırıma Başla",
+        "hero-title": "Geleceğinizi Güvenceye Alın, <br><span class='text-amber-500'>Sermayenizi Büyütün.</span>",
+        "hero-desc": "Küresel pazarlarda güvenle hareket edin. Capital Investment, varlığınızı sürdürülebilir şekilde büyütmek için veriye dayalı stratejiler ve uzman rehberliği sunar.",
+        "hero-cta-1": "Hizmetleri İnceleyin", "hero-cta-2": "İletişime Geçin",
+        "metric-1": "Yönetilen Toplam Varlık", "metric-2": "Aktif Yatırımcı", "metric-3": "Ortalama Yıllık Büyüme", "metric-4": "Uzman Danışman",
+        "services-title": "Temel Hizmetlerimiz", "services-subtitle": "Varlığınızı korumak ve uzun vadeli piyasa performansı elde etmek için tasarlanmış özel finansal çözümler.",
+        "s1-title": "Portföy Yönetimi", "s1-desc": "Bireyler ve kurumlar için özel olarak oluşturulmuş, risk optimizasyonlu yatırım stratejileri.",
+        "s2-title": "Kurumsal Finansman", "s2-desc": "Birleşme ve satın almalar (M&A), sermaye yaratma ve kurumsal büyüme için danışmanlık hizmetleri.",
+        "s3-title": "Gayrimenkul & Fonlar", "s3-desc": "Yüksek getirili kurumsal gayrimenkul fonları ve alternatif reel varlık yapıları.",
+        "s4-title": "Risk Sermayesi", "s4-desc": "Yüksek büyüme potansiyeline sahip teknoloji girişimleri için erken aşama sermaye finansmanı ve stratejik ağlar.",
+        "why-title": "Deneyimli Yatırımcılar Neden <br>Capital Investment'ı Seçiyor?",
+        "why-desc": "Kurumsal yönetime, dünya standartlarında varlık dağıtım metodolojilerine ve başarımızı doğrudan müşterilerimizle uyumlu hale getirmeye sarsılmaz bir bağlılık gösteriyoruz.",
+        "w1-title": "Veriye Dayalı Analizler", "w1-desc": "Gelişmiş piyasa analitiği ve nicel tahmin araçları her bir kararımıza yön verir.",
+        "w2-title": "Şeffaflık & Dürüstlük", "w2-desc": "Net, gerçek zamanlı müşteri raporlama panelleri ve mutlak yasal uyumluluk.",
+        "badge-title": "Kurumsal Düzeyde Güvenlik", "badge-desc": "Varlığınız, bağımsız kuruluşlarca düzenli olarak denetlenen, katı uluslararası mütevelli standartları altında yönetilir.",
+        "contact-title": "Birlikte Harika Bir Gelecek İnşa Edelim", "contact-desc": "Kurumsal bilançonuzu veya özel varlık portföyünüzü nasıl optimize edebileceğimizi öğrenmek için danışma masamızla iletişime geçin.",
+        "form-title": "Danışmanlık Talep Edin", "form-name": "Ad Soyad", "form-email": "E-posta Adresi", "form-btn": "Talebi Gönder", "footer-rights": "Tüm hakları saklıdır.",
+        "footer-disclaimer": "Yasal Uyarı: Yüksek riskli finansal hizmetler. Geçmiş performans, gelecekteki sonuçların garantisi değildir. Bu web sitesinde sağlanan bilgiler yalnızca bilgilendirme amaçlıdır ve resmi bir finans veya yatırım tavsiyesi niteliği taşımaz."
+    },
+    zh: {
+        "ticker-sp": "标普 500 指数", "ticker-nasdaq": "纳斯达克", "ticker-gold": "黄金现货", "ticker-btc": "比特币", "ticker-eur": "欧元/美元",
         "nav-home": "首页", "nav-about": "关于我们", "nav-services": "核心服务", "nav-why": "为什么选择我们", "nav-contact": "联系我们", "cta-btn": "开始投资",
         "hero-title": "保障您的未来，<br><span class='text-amber-500'>实现资本最大化。</span>",
         "hero-desc": "自信应对全球市场。Capital Investment 提供数据驱动的的策略与专家指导，助力您的财富可持续增长。",
@@ -280,8 +333,8 @@
         "contact-title": "携手共创辉煌未来", "contact-desc": "欢迎联系我们的咨询团队，了解我们如何协助您优化企业资产负债表或私人财富组合。",
         "form-title": "预约专家咨询", "form-name": "全名", "form-email": "电子邮箱", "form-btn": "提交申请", "footer-rights": "保留所有权利。",
         "footer-disclaimer": "免责声明：高风险金融服务。过往业绩不代表未来表现。本网站提供的信息仅供参考，不构成任何正式的财务或投资建议。"
-        }
-        };
+    }
+};
 
         function setLanguage(lang) {
     // Update data-lang attributes
