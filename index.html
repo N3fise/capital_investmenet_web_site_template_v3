@@ -4,96 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capital Investment | Secure Your Future</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-slate-800 font-sans antialiased">
-<!-- TOP MARKET TICKER BAND -->
-<div class="bg-slate-950 text-white border-b border-slate-800 text-xs py-2 overflow-hidden relative">
-    <div class="flex whitespace-nowrap animate-[marquee_25s_linear_infinite] hover:[animation-play-state:paused] space-x-12 px-6">
-        <!-- Item 1 -->
-        <div class="flex items-center space-x-2">
-            <span data-lang="ticker-sp" class="font-semibold text-slate-400">S&P 500</span>
-            <span class="font-mono font-bold">5,240.20</span>
-            <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.45%</span>
-        </div>
-        <!-- Item 2 -->
-        <div class="flex items-center space-x-2">
-            <span data-lang="ticker-nasdaq" class="font-semibold text-slate-400">NASDAQ</span>
-            <span class="font-mono font-bold">18,320.50</span>
-            <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.82%</span>
-        </div>
-        <!-- Item 3 -->
-        <div class="flex items-center space-x-2">
-            <span data-lang="ticker-gold" class="font-semibold text-slate-400">Gold</span>
-            <span class="font-mono font-bold">$2,345.80</span>
-            <span class="text-rose-500 font-semibold font-mono"><i class="fa-solid fa-caret-down mr-0.5"></i>-0.12%</span>
-        </div>
-        <!-- Item 4 -->
-        <div class="flex items-center space-x-2">
-            <span data-lang="ticker-btc" class="font-semibold text-slate-400">Bitcoin</span>
-            <span class="font-mono font-bold">$68,420.00</span>
-            <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+2.15%</span>
-        </div>
-        <!-- Item 5 -->
-        <div class="flex items-center space-x-2">
-            <span data-lang="ticker-eur" class="font-semibold text-slate-400">EUR/USD</span>
-            <span class="font-mono font-bold">1.0845</span>
-            <span class="text-rose-500 font-semibold font-mono"><i class="fa-solid fa-caret-down mr-0.5"></i>-0.04%</span>
-        </div>
-        <!-- Tekrar eden öğeler (Sonsuz döngü hissi yaratmak için Tailwind animasyonlarında kopyalanır) -->
-        <div class="flex items-center space-x-2">
-            <span data-lang="ticker-sp" class="font-semibold text-slate-400">S&P 500</span>
-            <span class="font-mono font-bold">5,240.20</span>
-            <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.45%</span>
-        </div>
-        <div class="flex items-center space-x-2">
-            <span data-lang="ticker-nasdaq" class="font-semibold text-slate-400">NASDAQ</span>
-            <span class="font-mono font-bold">18,320.50</span>
-            <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.82%</span>
-        </div>
-        <div class="flex items-center space-x-2">
-            <span data-lang="ticker-gold" class="font-semibold text-slate-400">Gold</span>
-            <span class="font-mono font-bold">$2,345.80</span>
-            <span class="text-rose-500 font-semibold font-mono"><i class="fa-solid fa-caret-down mr-0.5"></i>-0.12%</span>
+
+    <div class="bg-slate-950 text-white border-b border-slate-800 text-xs py-2.5 overflow-hidden w-full">
+        <div class="animate-marquee space-x-12 px-6">
+            <div class="flex items-center space-x-2">
+                <span data-lang="ticker-sp" class="font-semibold text-slate-400">S&P 500</span>
+                <span class="font-mono font-bold">5,240.20</span>
+                <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.45%</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span data-lang="ticker-nasdaq" class="font-semibold text-slate-400">NASDAQ</span>
+                <span class="font-mono font-bold">18,320.50</span>
+                <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.82%</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span data-lang="ticker-gold" class="font-semibold text-slate-400">Gold</span>
+                <span class="font-mono font-bold">$2,345.80</span>
+                <span class="text-rose-500 font-semibold font-mono"><i class="fa-solid fa-caret-down mr-0.5"></i>-0.12%</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span data-lang="ticker-btc" class="font-semibold text-slate-400">Bitcoin</span>
+                <span class="font-mono font-bold">$68,420.00</span>
+                <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+2.15%</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span data-lang="ticker-eur" class="font-semibold text-slate-400">EUR/USD</span>
+                <span class="font-mono font-bold">1.0845</span>
+                <span class="text-rose-500 font-semibold font-mono"><i class="fa-solid fa-caret-down mr-0.5"></i>-0.04%</span>
+            </div>
+            
+            <div class="flex items-center space-x-2">
+                <span data-lang="ticker-sp" class="font-semibold text-slate-400">S&P 500</span>
+                <span class="font-mono font-bold">5,240.20</span>
+                <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.45%</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span data-lang="ticker-nasdaq" class="font-semibold text-slate-400">NASDAQ</span>
+                <span class="font-mono font-bold">18,320.50</span>
+                <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+0.82%</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span data-lang="ticker-gold" class="font-semibold text-slate-400">Gold</span>
+                <span class="font-mono font-bold">$2,345.80</span>
+                <span class="text-rose-500 font-semibold font-mono"><i class="fa-solid fa-caret-down mr-0.5"></i>-0.12%</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span data-lang="ticker-btc" class="font-semibold text-slate-400">Bitcoin</span>
+                <span class="font-mono font-bold">$68,420.00</span>
+                <span class="text-emerald-500 font-semibold font-mono"><i class="fa-solid fa-caret-up mr-0.5"></i>+2.15%</span>
+            </div>
         </div>
     </div>
-</div>
-    <!-- 1. HEADER (NAVIGATION) -->
+
     <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
             <a href="#" class="text-2xl font-bold tracking-wider text-amber-500">
                 CAPITAL <span class="text-white font-light">INVESTMENT</span>
             </a>
-            <!-- Menu -->
             <nav class="hidden md:flex space-x-8 font-medium">
-                <a href="#" data-lang="nav-home" class="hover:text-amber-500 transition">Home</a>
-                <a href="#about" data-lang="nav-about" class="hover:text-amber-500 transition">About Us</a>
-                <a href="#services" data-lang="nav-services" class="hover:text-amber-500 transition">Services</a>
-                <a href="#why-us" data-lang="nav-why" class="hover:text-amber-500 transition">Why Choose Us</a>
-                <a href="#contact" data-lang="nav-contact" class="hover:text-amber-500 transition">Contact</a>
+                <a href="#" class="hover:text-amber-500 transition" data-lang="nav-home">Home</a>
+                <a href="#about" class="hover:text-amber-500 transition" data-lang="nav-about">About Us</a>
+                <a href="#services" class="hover:text-amber-500 transition" data-lang="nav-services">Services</a>
+                <a href="#why-us" class="hover:text-amber-500 transition" data-lang="nav-why">Why Choose Us</a>
+                <a href="#contact" class="hover:text-amber-500 transition" data-lang="nav-contact">Contact</a>
             </nav>
             
-            <!-- Language Switcher & CTA -->
             <div class="flex items-center space-x-6">
-                <!-- Language Buttons -->
                 <div class="flex space-x-2 text-sm font-semibold border border-slate-700 rounded-lg p-1 bg-slate-950">
                     <button onclick="setLanguage('en')" id="btn-en" class="px-2.5 py-1 rounded bg-amber-500 text-slate-950 transition">EN</button>
                     <button onclick="setLanguage('tr')" id="btn-tr" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition">TR</button>
                     <button onclick="setLanguage('zh')" id="btn-zh" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition">CN</button>
                 </div>
-                <!-- CTA Button -->
-                <a href="#contact" data-lang="cta-btn" class="hidden md:block bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 py-2 rounded-lg transition shadow-lg">
+                <a href="#contact" class="hidden md:block bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 py-2 rounded-lg transition shadow-lg" data-lang="cta-btn">
                     Start Investing
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- 2. HERO SECTION -->
     <section class="relative bg-slate-900 text-white py-32 px-6 overflow-hidden">
         <div class="container mx-auto max-w-5xl text-center relative z-10">
             <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -103,85 +110,78 @@
                 Navigate global markets with confidence. Capital Investment provides data-driven strategies and expert guidance to grow your wealth sustainably.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#services" data-lang="hero-cta-1" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 py-4 rounded-lg text-lg transition shadow-xl">
+                <a href="#services" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 py-4 rounded-lg text-lg transition shadow-xl" data-lang="hero-cta-1">
                     Explore Services
                 </a>
-                <a href="#contact" data-lang="hero-cta-2" class="border-2 border-slate-400 hover:border-white hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg text-lg transition">
+                <a href="#contact" class="border-2 border-slate-400 hover:border-white hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg text-lg transition" data-lang="hero-cta-2">
                     Get in Touch
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 3. KEY METRICS -->
     <section class="bg-white border-b border-gray-100 py-12 shadow-sm">
         <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
                 <p class="text-3xl md:text-4xl font-bold text-slate-900">$1.2B+</p>
-                <p data-lang="metric-1" class="text-sm text-gray-500 mt-1 uppercase tracking-wider font-semibold">Assets Under Management</p>
+                <p class="text-sm text-gray-500 mt-1 uppercase tracking-wider font-semibold" data-lang="metric-1">Assets Under Management</p>
             </div>
             <div>
                 <p class="text-3xl md:text-4xl font-bold text-slate-900">10,000+</p>
-                <p data-lang="metric-2" class="text-sm text-gray-500 mt-1 uppercase tracking-wider font-semibold">Active Investors</p>
+                <p class="text-sm text-gray-500 mt-1 uppercase tracking-wider font-semibold" data-lang="metric-2">Active Investors</p>
             </div>
             <div>
                 <p class="text-3xl md:text-4xl font-bold text-emerald-600">18.5%</p>
-                <p data-lang="metric-3" class="text-sm text-gray-500 mt-1 uppercase tracking-wider font-semibold">Avg. Annual Growth</p>
+                <p class="text-sm text-gray-500 mt-1 uppercase tracking-wider font-semibold" data-lang="metric-3">Avg. Annual Growth</p>
             </div>
             <div>
                 <p class="text-3xl md:text-4xl font-bold text-slate-900">50+</p>
-                <p data-lang="metric-4" class="text-sm text-gray-500 mt-1 uppercase tracking-wider font-semibold">Expert Advisors</p>
+                <p class="text-sm text-gray-500 mt-1 uppercase tracking-wider font-semibold" data-lang="metric-4">Expert Advisors</p>
             </div>
         </div>
     </section>
 
-    <!-- 4. CORE SERVICES -->
     <section id="services" class="py-24 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 data-lang="services-title" class="text-3xl font-bold text-slate-900 sm:text-4xl">Our Core Services</h2>
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl" data-lang="services-title">Our Core Services</h2>
                 <div class="h-1 w-20 bg-amber-500 mx-auto mt-4 rounded"></div>
-                <p data-lang="services-subtitle" class="text-gray-600 mt-4">Tailored financial solutions designed to protect your wealth and generate long-term market outperformance.</p>
+                <p class="text-gray-600 mt-4" data-lang="services-subtitle">Tailored financial solutions designed to protect your wealth and generate long-term market outperformance.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Service 1 -->
                 <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
                     <div class="w-12 h-12 bg-amber-100 text-amber-600 flex items-center justify-center rounded-lg text-xl mb-6">
                         <i class="fa-solid fa-chart-pie"></i>
                     </div>
-                    <h3 data-lang="s1-title" class="text-xl font-bold text-slate-900 mb-3">Portfolio Management</h3>
-                    <p data-lang="s1-desc" class="text-gray-600 text-sm leading-relaxed">Tailored, risk-optimized investment strategies custom built for individuals and institutions.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-lang="s1-title">Portfolio Management</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="s1-desc">Tailored, risk-optimized investment strategies custom built for individuals and institutions.</p>
                 </div>
-                <!-- Service 2 -->
                 <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
                     <div class="w-12 h-12 bg-amber-100 text-amber-600 flex items-center justify-center rounded-lg text-xl mb-6">
                         <i class="fa-solid fa-building-columns"></i>
                     </div>
-                    <h3 data-lang="s2-title" class="text-xl font-bold text-slate-900 mb-3">Corporate Finance</h3>
-                    <p data-lang="s2-desc" class="text-gray-600 text-sm leading-relaxed">Advisory services for mergers & acquisitions (M&A), capital raising, and corporate growth.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-lang="s2-title">Corporate Finance</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="s2-desc">Advisory services for mergers & acquisitions (M&A), capital raising, and corporate growth.</p>
                 </div>
-                <!-- Service 3 -->
                 <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
                     <div class="w-12 h-12 bg-amber-100 text-amber-600 flex items-center justify-center rounded-lg text-xl mb-6">
                         <i class="fa-solid fa-city"></i>
                     </div>
-                    <h3 data-lang="s3-title" class="text-xl font-bold text-slate-900 mb-3">Real Estate & Funds</h3>
-                    <p data-lang="s3-desc" class="text-gray-600 text-sm leading-relaxed">High-yield institutional real estate funds and alternative real asset structures.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-lang="s3-title">Real Estate & Funds</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="s3-desc">High-yield institutional real estate funds and alternative real asset structures.</p>
                 </div>
-                <!-- Service 4 -->
                 <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
                     <div class="w-12 h-12 bg-amber-100 text-amber-600 flex items-center justify-center rounded-lg text-xl mb-6">
                         <i class="fa-solid fa-rocket"></i>
                     </div>
-                    <h3 data-lang="s4-title" class="text-xl font-bold text-slate-900 mb-3">Venture Capital</h3>
-                    <p data-lang="s4-desc" class="text-gray-600 text-sm leading-relaxed">Early-stage equity funding and strategic networks for high-growth technology startups.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3" data-lang="s4-title">Venture Capital</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="s4-desc">Early-stage equity funding and strategic networks for high-growth technology startups.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. WHY CHOOSE US -->
     <section id="why-us" class="py-24 bg-slate-900 text-white">
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -194,33 +194,32 @@
                     <div class="flex items-start space-x-4">
                         <div class="mt-1 text-amber-500"><i class="fa-solid fa-circle-check text-lg"></i></div>
                         <div>
-                            <h4 data-lang="w1-title" class="text-lg font-semibold">Data-Driven Insights</h4>
-                            <p data-lang="w1-desc" class="text-slate-400 text-sm">Advanced market analytics and quantitative forecasting tools drive every single decision.</p>
+                            <h4 class="text-lg font-semibold" data-lang="w1-title">Data-Driven Insights</h4>
+                            <p class="text-slate-400 text-sm" data-lang="w1-desc">Advanced market analytics and quantitative forecasting tools drive every single decision.</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">
                         <div class="mt-1 text-amber-500"><i class="fa-solid fa-circle-check text-lg"></i></div>
                         <div>
-                            <h4 data-lang="w2-title" class="text-lg font-semibold">Transparency & Integrity</h4>
-                            <p data-lang="w2-desc" class="text-slate-400 text-sm">Clear, real-time client reporting dashboards and absolute regulatory compliance.</p>
+                            <h4 class="text-lg font-semibold" data-lang="w2-title">Transparency & Integrity</h4>
+                            <p class="text-slate-400 text-sm" data-lang="w2-desc">Clear, real-time client reporting dashboards and absolute regulatory compliance.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-inner text-center">
                 <i class="fa-solid fa-shield-halved text-6xl text-amber-500 mb-4"></i>
-                <h3 data-lang="badge-title" class="text-xl font-bold mb-2">Institutional Grade Security</h3>
-                <p data-lang="badge-desc" class="text-slate-400 text-sm max-w-sm mx-auto">Your wealth is managed under strict international fiduciary standards, audited regularly by independent bodies.</p>
+                <h3 class="text-xl font-bold mb-2" data-lang="badge-title">Institutional Grade Security</h3>
+                <p class="text-slate-400 text-sm max-w-sm mx-auto" data-lang="badge-desc">Your wealth is managed under strict international fiduciary standards, audited regularly by independent bodies.</p>
             </div>
         </div>
     </section>
 
-    <!-- 6. CONTACT SECTION -->
     <section id="contact" class="py-24 bg-white">
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-                <h2 data-lang="contact-title" class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">Let's Build Something Great Together</h2>
-                <p data-lang="contact-desc" class="text-gray-600 mb-8">Get in touch with our advisory desk to learn how we can optimize your corporate balance sheet or private wealth portfolio.</p>
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl mb-4" data-lang="contact-title">Let's Build Something Great Together</h2>
+                <p class="text-gray-600 mb-8" data-lang="contact-desc">Get in touch with our advisory desk to learn how we can optimize your corporate balance sheet or private wealth portfolio.</p>
                 <div class="space-y-6">
                     <div class="flex items-center space-x-4">
                         <div class="w-10 h-10 bg-slate-100 flex items-center justify-center text-slate-700 rounded-full"><i class="fa-solid fa-envelope"></i></div>
@@ -234,17 +233,17 @@
             </div>
             
             <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 shadow-sm">
-                <h3 data-lang="form-title" class="text-xl font-bold text-slate-900 mb-6">Request a Consultation</h3>
+                <h3 class="text-xl font-bold text-slate-900 mb-6" data-lang="form-title">Request a Consultation</h3>
                 <form action="#" class="space-y-4">
                     <div>
-                        <label data-lang="form-name" class="block text-sm font-semibold text-gray-700 mb-1">Full Name</label>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1" data-lang="form-name">Full Name</label>
                         <input type="text" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white" placeholder="John Doe" required>
                     </div>
                     <div>
-                        <label data-lang="form-email" class="block text-sm font-semibold text-gray-700 mb-1">Email Address</label>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1" data-lang="form-email">Email Address</label>
                         <input type="email" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white" placeholder="john@example.com" required>
                     </div>
-                    <button type="submit" data-lang="form-btn" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-lg transition mt-4">
+                    <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-lg transition mt-4" data-lang="form-btn">
                         Submit Request
                     </button>
                 </form>
@@ -252,7 +251,6 @@
         </div>
     </section>
 
-    <!-- 7. FOOTER -->
     <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
         <div class="container mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
@@ -268,105 +266,101 @@
         </div>
     </footer>
 
-    <!-- MULTI-LANGUAGE JAVASCRIPT MECHANISM -->
     <script>
         const translations = {
-    en: {
-        "ticker-sp": "S&P 500", "ticker-nasdaq": "NASDAQ", "ticker-gold": "Gold", "ticker-btc": "Bitcoin", "ticker-eur": "EUR/USD",
-        "nav-home": "Home", "nav-about": "About Us", "nav-services": "Services", "nav-why": "Why Choose Us", "nav-contact": "Contact", "cta-btn": "Start Investing",
-        "hero-title": "Secure Your Future, <br><span class='text-amber-500'>Maximize Your Capital.</span>",
-        "hero-desc": "Navigate global markets with confidence. Capital Investment provides data-driven strategies and expert guidance to grow your wealth sustainably.",
-        "hero-cta-1": "Explore Services", "hero-cta-2": "Get in Touch",
-        "metric-1": "Assets Under Management", "metric-2": "Active Investors", "metric-3": "Avg. Annual Growth", "metric-4": "Expert Advisors",
-        "services-title": "Our Core Services", "services-subtitle": "Tailored financial solutions designed to protect your wealth and generate long-term market outperformance.",
-        "s1-title": "Portfolio Management", "s1-desc": "Tailored, risk-optimized investment strategies custom built for individuals and institutions.",
-        "s2-title": "Corporate Finance", "s2-desc": "Advisory services for mergers & acquisitions (M&A), capital raising, and corporate growth.",
-        "s3-title": "Real Estate & Funds", "s3-desc": "High-yield institutional real estate funds and alternative real asset structures.",
-        "s4-title": "Venture Capital", "s4-desc": "Early-stage equity funding and strategic networks for high-growth technology startups.",
-        "why-title": "Why Sophisticated Investors <br>Choose Capital Investment",
-        "why-desc": "We maintain an unwavering commitment to corporate governance, world-class asset allocation methodologies, and aligning our success directly with our clients.",
-        "w1-title": "Data-Driven Insights", "w1-desc": "Advanced market analytics and quantitative forecasting tools drive every single decision.",
-        "w2-title": "Transparency & Integrity", "w2-desc": "Clear, real-time client reporting dashboards and absolute regulatory compliance.",
-        "badge-title": "Institutional Grade Security", "badge-desc": "Your wealth is managed under strict international fiduciary standards, audited regularly by independent bodies.",
-        "contact-title": "Let's Build Something Great Together", "contact-desc": "Get in touch with our advisory desk to learn how we can optimize your corporate balance sheet or private wealth portfolio.",
-        "form-title": "Request a Consultation", "form-name": "Full Name", "form-email": "Email Address", "form-btn": "Submit Request", "footer-rights": "All rights reserved.",
-        "footer-disclaimer": "Disclaimer: High-risk financial services. Past performance does not guarantee future results. The information provided on this website is for informational purposes only and does not constitute formal financial or investment advice."
-    },
-    tr: {
-        "ticker-sp": "S&P 500 Endeksi", "ticker-nasdaq": "NASDAQ Endeksi", "ticker-gold": "Altın (Ons)", "ticker-btc": "Bitcoin", "ticker-eur": "Euro / Dolar",
-        "nav-home": "Ana Sayfa", "nav-about": "Hakkımızda", "nav-services": "Hizmetler", "nav-why": "Neden Biz?", "nav-contact": "İletişim", "cta-btn": "Yatırıma Başla",
-        "hero-title": "Geleceğinizi Güvenceye Alın, <br><span class='text-amber-500'>Sermayenizi Büyütün.</span>",
-        "hero-desc": "Küresel pazarlarda güvenle hareket edin. Capital Investment, varlığınızı sürdürülebilir şekilde büyütmek için veriye dayalı stratejiler ve uzman rehberliği sunar.",
-        "hero-cta-1": "Hizmetleri İnceleyin", "hero-cta-2": "İletişime Geçin",
-        "metric-1": "Yönetilen Toplam Varlık", "metric-2": "Aktif Yatırımcı", "metric-3": "Ortalama Yıllık Büyüme", "metric-4": "Uzman Danışman",
-        "services-title": "Temel Hizmetlerimiz", "services-subtitle": "Varlığınızı korumak ve uzun vadeli piyasa performansı elde etmek için tasarlanmış özel finansal çözümler.",
-        "s1-title": "Portföy Yönetimi", "s1-desc": "Bireyler ve kurumlar için özel olarak oluşturulmuş, risk optimizasyonlu yatırım stratejileri.",
-        "s2-title": "Kurumsal Finansman", "s2-desc": "Birleşme ve satın almalar (M&A), sermaye yaratma ve kurumsal büyüme için danışmanlık hizmetleri.",
-        "s3-title": "Gayrimenkul & Fonlar", "s3-desc": "Yüksek getirili kurumsal gayrimenkul fonları ve alternatif reel varlık yapıları.",
-        "s4-title": "Risk Sermayesi", "s4-desc": "Yüksek büyüme potansiyeline sahip teknoloji girişimleri için erken aşama sermaye finansmanı ve stratejik ağlar.",
-        "why-title": "Deneyimli Yatırımcılar Neden <br>Capital Investment'ı Seçiyor?",
-        "why-desc": "Kurumsal yönetime, dünya standartlarında varlık dağıtım metodolojilerine ve başarımızı doğrudan müşterilerimizle uyumlu hale getirmeye sarsılmaz bir bağlılık gösteriyoruz.",
-        "w1-title": "Veriye Dayalı Analizler", "w1-desc": "Gelişmiş piyasa analitiği ve nicel tahmin araçları her bir kararımıza yön verir.",
-        "w2-title": "Şeffaflık & Dürüstlük", "w2-desc": "Net, gerçek zamanlı müşteri raporlama panelleri ve mutlak yasal uyumluluk.",
-        "badge-title": "Kurumsal Düzeyde Güvenlik", "badge-desc": "Varlığınız, bağımsız kuruluşlarca düzenli olarak denetlenen, katı uluslararası mütevelli standartları altında yönetilir.",
-        "contact-title": "Birlikte Harika Bir Gelecek İnşa Edelim", "contact-desc": "Kurumsal bilançonuzu veya özel varlık portföyünüzü nasıl optimize edebileceğimizi öğrenmek için danışma masamızla iletişime geçin.",
-        "form-title": "Danışmanlık Talep Edin", "form-name": "Ad Soyad", "form-email": "E-posta Adresi", "form-btn": "Talebi Gönder", "footer-rights": "Tüm hakları saklıdır.",
-        "footer-disclaimer": "Yasal Uyarı: Yüksek riskli finansal hizmetler. Geçmiş performans, gelecekteki sonuçların garantisi değildir. Bu web sitesinde sağlanan bilgiler yalnızca bilgilendirme amaçlıdır ve resmi bir finans veya yatırım tavsiyesi niteliği taşımaz."
-    },
-    zh: {
-        "ticker-sp": "标普 500 指数", "ticker-nasdaq": "纳斯达克", "ticker-gold": "黄金现货", "ticker-btc": "比特币", "ticker-eur": "欧元/美元",
-        "nav-home": "首页", "nav-about": "关于我们", "nav-services": "核心服务", "nav-why": "为什么选择我们", "nav-contact": "联系我们", "cta-btn": "开始投资",
-        "hero-title": "保障您的未来，<br><span class='text-amber-500'>实现资本最大化。</span>",
-        "hero-desc": "自信应对全球市场。Capital Investment 提供数据驱动的的策略与专家指导，助力您的财富可持续增长。",
-        "hero-cta-1": "探索核心服务", "hero-cta-2": "与我们联系",
-        "metric-1": "资产管理规模 (AUM)", "metric-2": "活跃投资者", "metric-3": "年平均增长率", "metric-4": "专家顾问团",
-        "services-title": "我们的核心服务", "services-subtitle": "量身定制的财务解决方案，旨在保护您的财富并在长期市场中实现卓越表现。",
-        "s1-title": "投资组合管理", "s1-desc": "为个人和机构量身定制、兼顾风险优化的投资战略。",
-        "s2-title": "企业融资", "s2-desc": "提供企业并购 (M&A)、资本筹集和企业成长方面的咨询服务。",
-        "s3-title": "房地产与基金", "s3-desc": "高收益的机构级房地产基金和创新的替代实物资产结构。",
-        "s4-title": "风险投资", "s4-desc": "为高成长性技术初创企业提供早期股权资金和战略合作网络。",
-        "why-title": "资深投资者为何<br>选择 Capital Investment",
-        "why-desc": "我们始终恪守对公司治理、世界级资产配置方法论的承诺，将我们的成功与客户的利益直接紧密挂钩。",
-        "w1-title": "数据驱动的深刻洞察", "w1-desc": "每一项投资决策都由先进的市场分析和量化预测工具共同驱动。",
-        "w2-title": "透明度与诚信度", "w2-desc": "清晰、实时的客户报告系统，以及对国际金融法规的绝对合规执行。",
-        "badge-title": "机构级安全保障", "badge-desc": "您的财富管理严格遵循国际信托标准，并接受独立机构的定期审计。",
-        "contact-title": "携手共创辉煌未来", "contact-desc": "欢迎联系我们的咨询团队，了解我们如何协助您优化企业资产负债表或私人财富组合。",
-        "form-title": "预约专家咨询", "form-name": "全名", "form-email": "电子邮箱", "form-btn": "提交申请", "footer-rights": "保留所有权利。",
-        "footer-disclaimer": "免责声明：高风险金融服务。过往业绩不代表未来表现。本网站提供的信息仅供参考，不构成任何正式的财务或投资建议。"
-    }
-};
+            en: {
+                "ticker-sp": "S&P 500", "ticker-nasdaq": "NASDAQ", "ticker-gold": "Gold", "ticker-btc": "Bitcoin", "ticker-eur": "EUR/USD",
+                "nav-home": "Home", "nav-about": "About Us", "nav-services": "Services", "nav-why": "Why Choose Us", "nav-contact": "Contact", "cta-btn": "Start Investing",
+                "hero-title": "Secure Your Future, <br><span class='text-amber-500'>Maximize Your Capital.</span>",
+                "hero-desc": "Navigate global markets with confidence. Capital Investment provides data-driven strategies and expert guidance to grow your wealth sustainably.",
+                "hero-cta-1": "Explore Services", "hero-cta-2": "Get in Touch",
+                "metric-1": "Assets Under Management", "metric-2": "Active Investors", "metric-3": "Avg. Annual Growth", "metric-4": "Expert Advisors",
+                "services-title": "Our Core Services", "services-subtitle": "Tailored financial solutions designed to protect your wealth and generate long-term market outperformance.",
+                "s1-title": "Portfolio Management", "s1-desc": "Tailored, risk-optimized investment strategies custom built for individuals and institutions.",
+                "s2-title": "Corporate Finance", "s2-desc": "Advisory services for mergers & acquisitions (M&A), capital raising, and corporate growth.",
+                "s3-title": "Real Estate & Funds", "s3-desc": "High-yield institutional real estate funds and alternative real asset structures.",
+                "s4-title": "Venture Capital", "s4-desc": "Early-stage equity funding and strategic networks for high-growth technology startups.",
+                "why-title": "Why Sophisticated Investors <br>Choose Capital Investment",
+                "why-desc": "We maintain an unwavering commitment to corporate governance, world-class asset allocation methodologies, and aligning our success directly with our clients.",
+                "w1-title": "Data-Driven Insights", "w1-desc": "Advanced market analytics and quantitative forecasting tools drive every single decision.",
+                "w2-title": "Transparency & Integrity", "w2-desc": "Clear, real-time client reporting dashboards and absolute regulatory compliance.",
+                "badge-title": "Institutional Grade Security", "badge-desc": "Your wealth is managed under strict international fiduciary standards, audited regularly by independent bodies.",
+                "contact-title": "Let's Build Something Great Together", "contact-desc": "Get in touch with our advisory desk to learn how we can optimize your corporate balance sheet or private wealth portfolio.",
+                "form-title": "Request a Consultation", "form-name": "Full Name", "form-email": "Email Address", "form-btn": "Submit Request", "footer-rights": "All rights reserved.",
+                "footer-disclaimer": "Disclaimer: High-risk financial services. Past performance does not guarantee future results. The information provided on this website is for informational purposes only and does not constitute formal financial or investment advice."
+            },
+            tr: {
+                "ticker-sp": "S&P 500 Endeksi", "ticker-nasdaq": "NASDAQ Endeksi", "ticker-gold": "Altın (Ons)", "ticker-btc": "Bitcoin", "ticker-eur": "Euro / Dolar",
+                "nav-home": "Ana Sayfa", "nav-about": "Hakkımızda", "nav-services": "Hizmetler", "nav-why": "Neden Biz?", "nav-contact": "İletişim", "cta-btn": "Yatırıma Başla",
+                "hero-title": "Geleceğinizi Güvenceye Alın, <br><span class='text-amber-500'>Sermayenizi Büyütün.</span>",
+                "hero-desc": "Küresel pazarlarda güvenle hareket edin. Capital Investment, varlığınızı sürdürülebilir şekilde büyütmek için veriye dayalı stratejiler ve uzman rehberliği sunar.",
+                "hero-cta-1": "Hizmetleri İnceleyin", "hero-cta-2": "İletişime Geçin",
+                "metric-1": "Yönetilen Toplam Varlık", "metric-2": "Aktif Yatırımcı", "metric-3": "Ortalama Yıllık Büyüme", "metric-4": "Uzman Danışman",
+                "services-title": "Temel Hizmetlerimiz", "services-subtitle": "Varlığınızı korumak ve uzun vadeli piyasa performansı elde etmek için tasarlanmış özel finansal çözümler.",
+                "s1-title": "Portföy Yönetimi", "s1-desc": "Bireyler ve kurumlar için özel olarak oluşturulmuş, risk optimizasyonlu yatırım stratejileri.",
+                "s2-title": "Kurumsal Finansman", "s2-desc": "Birleşme ve satın almalar (M&A), sermaye yaratma ve kurumsal büyüme için danışmanlık hizmetleri.",
+                "s3-title": "Gayrimenkul & Fonlar", "s3-desc": "Yüksek getirili kurumsal gayrimenkul fonları ve alternatif reel varlık yapıları.",
+                "s4-title": "Risk Sermayesi", "s4-desc": "Yüksek büyüme potansiyeline sahip teknoloji girişimleri için erken aşama sermaye finansmanı ve stratejik ağlar.",
+                "why-title": "Deneyimli Yatırımcılar Neden <br>Capital Investment'ı Seçiyor?",
+                "why-desc": "Kurumsal yönetime, dünya standartlarında varlık dağıtım metodolojilerine ve başarımızı doğrudan müşterilerimizle uyumlu hale getirmeye sarsılmaz bir bağlılık gösteriyoruz.",
+                "w1-title": "Veriye Dayalı Analizler", "w1-desc": "Gelişmiş piyasa analitiği ve nicel tahmin araçları her bir kararımıza yön verir.",
+                "w2-title": "Şeffaflık & Dürüstlük", "w2-desc": "Net, gerçek zamanlı müşteri raporlama panelleri ve mutlak yasal uyumluluk.",
+                "badge-title": "Kurumsal Düzeyde Güvenlik", "badge-desc": "Varlığınız, bağımsız kuruluşlarca düzenli olarak denetlenen, katı uluslararası mütevelli standartları altında yönetilir.",
+                "contact-title": "Birlikte Harika Bir Gelecek İnşa Edelim", "contact-desc": "Kurumsal bilançonuzu veya özel varlık portföyünüzü nasıl optimize edebileceğimizi öğrenmek için danışma masamızla iletişime geçin.",
+                "form-title": "Danışmanlık Talep Edin", "form-name": "Ad Soyad", "form-email": "E-posta Adresi", "form-btn": "Talebi Gönder", "footer-rights": "Tüm hakları saklıdır.",
+                "footer-disclaimer": "Yasal Uyarı: Yüksek riskli finansal hizmetler. Geçmiş performans, gelecekteki sonuçların garantisi değildir. Bu web sitesinde sağlanan bilgiler yalnızca bilgilendirme amaçlıdır ve resmi bir finans veya yatırım tavsiyesi niteliği taşımaz."
+            },
+            zh: {
+                "ticker-sp": "标普 500 指数", "ticker-nasdaq": "纳斯达克", "ticker-gold": "黄金现货", "ticker-btc": "比特币", "ticker-eur": "欧元/美元",
+                "nav-home": "首页", "nav-about": "关于我们", "nav-services": "核心服务", "nav-why": "为什么选择我们", "nav-contact": "联系我们", "cta-btn": "开始投资",
+                "hero-title": "保障您的未来，<br><span class='text-amber-500'>实现资本最大化。</span>",
+                "hero-desc": "自信应对全球市场。Capital Investment 提供数据驱动的的策略与专家指导，助力您的财富可持续增长。",
+                "hero-cta-1": "探索核心服务", "hero-cta-2": "与我们联系",
+                "metric-1": "资产管理规模 (AUM)", "metric-2": "活跃投资者", "metric-3": "年平均增长率", "metric-4": "专家顾问团",
+                "services-title": "我们的核心服务", "services-subtitle": "量身定制的财务解决方案，旨在保护您的财富并在长期市场中实现卓越表现。",
+                "s1-title": "投资组合管理", "s1-desc": "为个人和机构量身定制、兼顾风险优化的投资战略。",
+                "s2-title": "企业融资", "s2-desc": "提供企业并购 (M&A)、资本筹集和企业成长方面的咨询服务。",
+                "s3-title": "房地产与基金", "s3-desc": "高收益的机构级房地产基金和创新的替代实物资产结构。",
+                "s4-title": "风险投资", "s4-desc": "为高成长性技术初创企业提供早期股权资金和战略合作网络。",
+                "why-title": "资深投资者为何<br>选择 Capital Investment",
+                "why-desc": "我们始终恪守对公司治理、世界级资产配置方法论的承诺，将我们的成功与客户的利益直接紧密挂钩。",
+                "w1-title": "数据驱动的深刻洞察", "w1-desc": "每一项投资决策都由先进的市场分析和量化预测工具共同驱动。",
+                "w2-title": "透明度与诚信度", "w2-desc": "清晰、实时的客户报告系统，以及对国际金融法规的绝对合规执行。",
+                "badge-title": "机构级安全保障", "badge-desc": "您的财富管理严格遵循国际信托标准，并接受独立机构的定期审计。",
+                "contact-title": "携手共创辉煌未来", "contact-desc": "欢迎联系我们的咨询团队，了解我们如何协助您优化企业资产负债表或私人财富组合。",
+                "form-title": "预约专家咨询", "form-name": "全名", "form-email": "电子邮箱", "form-btn": "提交申请", "footer-rights": "保留所有权利。",
+                "footer-disclaimer": "免责声明：高风险金融服务。过往业绩不代表未来表现。本网站提供的信息仅供参考，不构成任何正式的财务或投资建议。"
+            }
+        };
 
         function setLanguage(lang) {
-    // Update data-lang attributes
-    document.querySelectorAll('[data-lang]').forEach(element => {
-        const key = element.getAttribute('data-lang');
-        if (translations[lang][key]) {
-            element.textContent = translations[lang][key];
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            document.getElementById('hero-title').innerHTML = translations[lang]['hero-title'];
+            document.getElementById('hero-desc').textContent = translations[lang]['hero-desc'];
+            document.getElementById('why-title').innerHTML = translations[lang]['why-title'];
+            document.getElementById('why-desc').textContent = translations[lang]['why-desc'];
+            document.getElementById('footer-disclaimer').textContent = translations[lang]['footer-disclaimer'];
+
+            const buttons = {
+                'en': document.getElementById('btn-en'),
+                'tr': document.getElementById('btn-tr'),
+                'zh': document.getElementById('btn-zh')
+            };
+
+            Object.keys(buttons).forEach(key => {
+                if (key === lang) {
+                    buttons[key].className = "px-2.5 py-1 rounded bg-amber-500 text-slate-950 transition";
+                } else {
+                    buttons[key].className = "px-2.5 py-1 rounded text-slate-400 hover:text-white transition";
+                }
+            });
         }
-    });
-
-    // Update complex elements
-    document.getElementById('hero-title').innerHTML = translations[lang]['hero-title'];
-    document.getElementById('hero-desc').textContent = translations[lang]['hero-desc'];
-    document.getElementById('why-title').innerHTML = translations[lang]['why-title'];
-    document.getElementById('why-desc').textContent = translations[lang]['why-desc'];
-    document.getElementById('footer-disclaimer').textContent = translations[lang]['footer-disclaimer'];
-
-    // Manage button active classes
-    const buttons = {
-        'en': document.getElementById('btn-en'),
-        'tr': document.getElementById('btn-tr'),
-        'zh': document.getElementById('btn-zh')
-    };
-
-    Object.keys(buttons).forEach(key => {
-        if (key === lang) {
-            buttons[key].className = "px-2.5 py-1 rounded bg-amber-500 text-slate-950 transition";
-        } else {
-            buttons[key].className = "px-2.5 py-1 rounded text-slate-400 hover:text-white transition";
-        }
-    });
-}
     </script>
 </body>
 </html>
