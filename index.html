@@ -24,6 +24,7 @@
 </head>
 <body class="bg-gray-50 text-slate-800 font-sans antialiased">
 
+    <!-- Borsa Şeridi -->
     <div class="bg-slate-950 text-white border-b border-slate-800 text-xs py-2.5 overflow-hidden w-full">
         <div class="animate-marquee space-x-12 px-6">
             <div class="flex items-center space-x-2">
@@ -51,7 +52,7 @@
                 <span class="font-mono font-bold">1.0845</span>
                 <span class="text-rose-500 font-semibold font-mono"><i class="fa-solid fa-caret-down mr-0.5"></i>-0.04%</span>
             </div>
-            
+            <!-- Döngüsel Akışın Bozulmaması İçin Kopyalar -->
             <div class="flex items-center space-x-2">
                 <span data-lang="ticker-sp" class="font-semibold text-slate-400">S&P 500</span>
                 <span class="font-mono font-bold">5,240.20</span>
@@ -75,11 +76,14 @@
         </div>
     </div>
 
+    <!-- Header -->
     <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold tracking-wider text-amber-500">
                 CAPITAL <span class="text-white font-light">INVESTMENT</span>
             </a>
+
+            <!-- Masaüstü Navigasyon -->
             <nav class="hidden md:flex space-x-8 font-medium">
                 <a href="#" class="hover:text-amber-500 transition" data-lang="nav-home">Home</a>
                 <a href="#about" class="hover:text-amber-500 transition" data-lang="nav-about">About Us</a>
@@ -88,19 +92,36 @@
                 <a href="#contact" class="hover:text-amber-500 transition" data-lang="nav-contact">Contact</a>
             </nav>
             
-            <div class="flex items-center space-x-6">
-                <div class="flex space-x-2 text-sm font-semibold border border-slate-700 rounded-lg p-1 bg-slate-950">
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <!-- Dil Seçici -->
+                <div class="flex space-x-1 text-sm font-semibold border border-slate-700 rounded-lg p-1 bg-slate-950">
                     <button onclick="setLanguage('en')" id="btn-en" class="px-2.5 py-1 rounded bg-amber-500 text-slate-950 transition">EN</button>
                     <button onclick="setLanguage('tr')" id="btn-tr" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition">TR</button>
                     <button onclick="setLanguage('zh')" id="btn-zh" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition">CN</button>
                 </div>
+                <!-- Masaüstü CTA -->
                 <a href="#contact" class="hidden md:block bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 py-2 rounded-lg transition shadow-lg" data-lang="cta-btn">
                     Start Investing
                 </a>
+                <!-- Mobil Menü Butonu -->
+                <button id="menu-btn" class="block md:hidden text-white text-2xl focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
+        </div>
+
+        <!-- Mobil Menü Açılır Katmanı -->
+        <div id="mobile-menu" class="hidden fixed inset-x-0 top-[65px] bottom-0 bg-slate-900 z-40 flex-col p-6 space-y-4 font-medium text-lg border-t border-slate-800">
+            <a href="#" class="hover:text-amber-500 transition" data-lang="nav-home">Home</a>
+            <a href="#about" class="hover:text-amber-500 transition" data-lang="nav-about">About Us</a>
+            <a href="#services" class="hover:text-amber-500 transition" data-lang="nav-services">Services</a>
+            <a href="#why-us" class="hover:text-amber-500 transition" data-lang="nav-why">Why Choose Us</a>
+            <a href="#contact" class="hover:text-amber-500 transition" data-lang="nav-contact">Contact</a>
+            <a href="#contact" class="bg-amber-500 text-slate-950 font-bold py-3 rounded-lg text-center block" data-lang="cta-btn">Start Investing</a>
         </div>
     </header>
 
+    <!-- Hero Bölümü -->
     <section class="relative bg-slate-900 text-white py-32 px-6 overflow-hidden">
         <div class="container mx-auto max-w-5xl text-center relative z-10">
             <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -120,6 +141,30 @@
         </div>
     </section>
 
+    <!-- ROI Hesaplayıcı Bölümü -->
+    <section class="py-16 bg-gray-100 border-t border-b border-gray-200">
+        <div class="container mx-auto px-6 max-w-xl bg-white p-8 rounded-2xl shadow-lg">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 text-center" data-lang="calc-title">Calculate Investment ROI</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1" data-lang="calc-label-amount">Investment Amount ($)</label>
+                    <input type="number" id="calc-amount" value="10000" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-amber-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">
+                        <span data-lang="calc-label-years">Time Horizon</span>: <span id="year-val" class="font-mono font-bold">3</span> <span data-lang="calc-label-unit">Years</span>
+                    </label>
+                    <input type="range" id="calc-years" min="1" max="10" value="3" class="w-full accent-amber-500">
+                </div>
+                <div class="p-4 bg-slate-900 text-white rounded-xl text-center">
+                    <p class="text-xs text-slate-400 uppercase tracking-wider" data-lang="calc-output-desc">Estimated Future Value (at 18.5% Avg. Annual Growth)</p>
+                    <p class="text-3xl font-mono font-bold text-amber-500 mt-1">$<span id="calc-result">16,640</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İstatistikler -->
     <section class="bg-white border-b border-gray-100 py-12 shadow-sm">
         <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -141,6 +186,7 @@
         </div>
     </section>
 
+    <!-- Hizmetler -->
     <section id="services" class="py-24 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16">
@@ -182,6 +228,7 @@
         </div>
     </section>
 
+    <!-- Neden Biz -->
     <section id="why-us" class="py-24 bg-slate-900 text-white">
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -215,6 +262,7 @@
         </div>
     </section>
 
+    <!-- İletişim -->
     <section id="contact" class="py-24 bg-white">
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -232,18 +280,18 @@
                 </div>
             </div>
             
-            <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 shadow-sm">
+            <div id="form-container" class="bg-gray-50 p-8 rounded-xl border border-gray-200 shadow-sm">
                 <h3 class="text-xl font-bold text-slate-900 mb-6" data-lang="form-title">Request a Consultation</h3>
-                <form action="#" class="space-y-4">
+                <form id="consultation-form" class="space-y-4">
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-1" data-lang="form-name">Full Name</label>
-                        <input type="text" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white" placeholder="John Doe" required>
+                        <input type="text" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white focus:outline-amber-500" placeholder="John Doe" required>
                     </div>
                     <div>
                         <label class="block text-sm font-semibold text-gray-700 mb-1" data-lang="form-email">Email Address</label>
-                        <input type="email" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white" placeholder="john@example.com" required>
+                        <input type="email" class="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white focus:outline-amber-500" placeholder="john@example.com" required>
                     </div>
-                    <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-lg transition mt-4" data-lang="form-btn">
+                    <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 rounded-lg transition mt-4 cursor-pointer" data-lang="form-btn">
                         Submit Request
                     </button>
                 </form>
@@ -251,6 +299,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
         <div class="container mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
@@ -274,6 +323,7 @@
                 "hero-title": "Secure Your Future, <br><span class='text-amber-500'>Maximize Your Capital.</span>",
                 "hero-desc": "Navigate global markets with confidence. Capital Investment provides data-driven strategies and expert guidance to grow your wealth sustainably.",
                 "hero-cta-1": "Explore Services", "hero-cta-2": "Get in Touch",
+                "calc-title": "Calculate Investment ROI", "calc-label-amount": "Investment Amount ($)", "calc-label-years": "Time Horizon", "calc-label-unit": "Years", "calc-output-desc": "Estimated Future Value (at 18.5% Avg. Annual Growth)",
                 "metric-1": "Assets Under Management", "metric-2": "Active Investors", "metric-3": "Avg. Annual Growth", "metric-4": "Expert Advisors",
                 "services-title": "Our Core Services", "services-subtitle": "Tailored financial solutions designed to protect your wealth and generate long-term market outperformance.",
                 "s1-title": "Portfolio Management", "s1-desc": "Tailored, risk-optimized investment strategies custom built for individuals and institutions.",
@@ -287,7 +337,8 @@
                 "badge-title": "Institutional Grade Security", "badge-desc": "Your wealth is managed under strict international fiduciary standards, audited regularly by independent bodies.",
                 "contact-title": "Let's Build Something Great Together", "contact-desc": "Get in touch with our advisory desk to learn how we can optimize your corporate balance sheet or private wealth portfolio.",
                 "form-title": "Request a Consultation", "form-name": "Full Name", "form-email": "Email Address", "form-btn": "Submit Request", "footer-rights": "All rights reserved.",
-                "footer-disclaimer": "Disclaimer: High-risk financial services. Past performance does not guarantee future results. The information provided on this website is for informational purposes only and does not constitute formal financial or investment advice."
+                "footer-disclaimer": "Disclaimer: High-risk financial services. Past performance does not guarantee future results. The information provided on this website is for informational purposes only and does not constitute formal financial or investment advice.",
+                "form-success-title": "Request Received!", "form-success-desc": "Our expert advisors will contact you as soon as possible."
             },
             tr: {
                 "ticker-sp": "S&P 500 Endeksi", "ticker-nasdaq": "NASDAQ Endeksi", "ticker-gold": "Altın (Ons)", "ticker-btc": "Bitcoin", "ticker-eur": "Euro / Dolar",
@@ -295,6 +346,7 @@
                 "hero-title": "Geleceğinizi Güvenceye Alın, <br><span class='text-amber-500'>Sermayenizi Büyütün.</span>",
                 "hero-desc": "Küresel pazarlarda güvenle hareket edin. Capital Investment, varlığınızı sürdürülebilir şekilde büyütmek için veriye dayalı stratejiler ve uzman rehberliği sunar.",
                 "hero-cta-1": "Hizmetleri İnceleyin", "hero-cta-2": "İletişime Geçin",
+                "calc-title": "Yatırım Getirisi Hesapla", "calc-label-amount": "Yatırım Tutarı ($)", "calc-label-years": "Yıl Sayısı", "calc-label-unit": "Yıl", "calc-output-desc": "Tahmini Gelecek Değer (%18.5 Yıllık Ortalama Büyüme ile)",
                 "metric-1": "Yönetilen Toplam Varlık", "metric-2": "Aktif Yatırımcı", "metric-3": "Ortalama Yıllık Büyüme", "metric-4": "Uzman Danışman",
                 "services-title": "Temel Hizmetlerimiz", "services-subtitle": "Varlığınızı korumak ve uzun vadeli piyasa performansı elde etmek için tasarlanmış özel finansal çözümler.",
                 "s1-title": "Portföy Yönetimi", "s1-desc": "Bireyler ve kurumlar için özel olarak oluşturulmuş, risk optimizasyonlu yatırım stratejileri.",
@@ -308,7 +360,8 @@
                 "badge-title": "Kurumsal Düzeyde Güvenlik", "badge-desc": "Varlığınız, bağımsız kuruluşlarca düzenli olarak denetlenen, katı uluslararası mütevelli standartları altında yönetilir.",
                 "contact-title": "Birlikte Harika Bir Gelecek İnşa Edelim", "contact-desc": "Kurumsal bilançonuzu veya özel varlık portföyünüzü nasıl optimize edebileceğimizi öğrenmek için danışma masamızla iletişime geçin.",
                 "form-title": "Danışmanlık Talep Edin", "form-name": "Ad Soyad", "form-email": "E-posta Adresi", "form-btn": "Talebi Gönder", "footer-rights": "Tüm hakları saklıdır.",
-                "footer-disclaimer": "Yasal Uyarı: Yüksek riskli finansal hizmetler. Geçmiş performans, gelecekteki sonuçların garantisi değildir. Bu web sitesinde sağlanan bilgiler yalnızca bilgilendirme amaçlıdır ve resmi bir finans veya yatırım tavsiyesi niteliği taşımaz."
+                "footer-disclaimer": "Yasal Uyarı: Yüksek riskli finansal hizmetler. Geçmiş performans, gelecekteki sonuçlerin garantisi değildir. Bu web sitesinde sağlanan bilgiler yalnızca bilgilendirme amaçlıdır ve resmi bir finans veya yatırım tavsiyesi niteliği taşımaz.",
+                "form-success-title": "Talebiniz Alındı!", "form-success-desc": "Uzman danışmanlarımız en kısa sürede sizinle iletişime geçecektir."
             },
             zh: {
                 "ticker-sp": "标普 500 指数", "ticker-nasdaq": "纳斯达克", "ticker-gold": "黄金现货", "ticker-btc": "比特币", "ticker-eur": "欧元/美元",
@@ -316,7 +369,8 @@
                 "hero-title": "保障您的未来，<br><span class='text-amber-500'>实现资本最大化。</span>",
                 "hero-desc": "自信应对全球市场。Capital Investment 提供数据驱动的的策略与专家指导，助力您的财富可持续增长。",
                 "hero-cta-1": "探索核心服务", "hero-cta-2": "与我们联系",
-                "metric-1": "资产管理规模 (AUM)", "metric-2": "活跃投资者", "metric-3": "年平均增长率", "metric-4": "专家顾问团",
+                "calc-title": "计算投资回报率 (ROI)", "calc-label-amount": "投资金额 ($)", "calc-label-years": "时间周期", "calc-label-unit": "年", "calc-output-desc": "预计未来价值（按年均增长率 18.5% 计算）",
+                "metric-1": "资产管理规模 (AUM)", "metric-2": "活跃投资者", "metric-3": "年 average 增长率", "metric-4": "专家顾问团",
                 "services-title": "我们的核心服务", "services-subtitle": "量身定制的财务解决方案，旨在保护您的财富并在长期市场中实现卓越表现。",
                 "s1-title": "投资组合管理", "s1-desc": "为个人和机构量身定制、兼顾风险优化的投资战略。",
                 "s2-title": "企业融资", "s2-desc": "提供企业并购 (M&A)、资本筹集和企业成长方面的咨询服务。",
@@ -329,24 +383,103 @@
                 "badge-title": "机构级安全保障", "badge-desc": "您的财富管理严格遵循国际信托标准，并接受独立机构的定期审计。",
                 "contact-title": "携手共创辉煌未来", "contact-desc": "欢迎联系我们的咨询团队，了解我们如何协助您优化企业资产负债表或私人财富组合。",
                 "form-title": "预约专家咨询", "form-name": "全名", "form-email": "电子邮箱", "form-btn": "提交申请", "footer-rights": "保留所有权利。",
-                "footer-disclaimer": "免责声明：高风险金融服务。过往业绩不代表未来表现。本网站提供的信息仅供参考，不构成任何正式的财务或投资建议。"
+                "footer-disclaimer": "免责声明：高风险金融服务。过往业绩不代表未来表现。本网站提供的信息仅供参考，不构成任何正式的财务或投资建议。",
+                "form-success-title": "申请已提交！", "form-success-desc": "我们的专业顾问团队将尽快与您联系。"
             }
         };
 
+        // DOM Yüklendiğinde Tetiklenecek Fonksiyonlar
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Dil Ayarları
+            const savedLang = localStorage.getItem('selectedLang') || 'en';
+            setLanguage(savedLang);
+
+            // 2. Mobil Menü Tetikleyicisi
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-xmark');
+                });
+
+                // Mobil menü linklerine tıklanınca menüyü kapat
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        const icon = menuBtn.querySelector('i');
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-xmark');
+                    });
+                });
+            }
+
+            // 3. ROI Hesaplayıcı Dinamikleri
+            const amountInput = document.getElementById('calc-amount');
+            const yearsInput = document.getElementById('calc-years');
+            const yearVal = document.getElementById('year-val');
+            const calcResult = document.getElementById('calc-result');
+
+            function calculateROI() {
+                if (!amountInput || !yearsInput || !yearVal || !calcResult) return;
+                const principal = parseFloat(amountInput.value) || 0;
+                const years = parseInt(yearsInput.value);
+                const rate = 0.185; 
+
+                yearVal.textContent = years;
+                const finalValue = principal * Math.pow((1 + rate), years);
+                calcResult.textContent = Math.round(finalValue).toLocaleString('en-US');
+            }
+
+            if (amountInput && yearsInput) {
+                amountInput.addEventListener('input', calculateROI);
+                yearsInput.addEventListener('input', calculateROI);
+            }
+
+            // 4. İletişim Formu Gönderimi
+            const form = document.getElementById('consultation-form');
+            const formContainer = document.getElementById('form-container');
+            
+            if (form && formContainer) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const currentLang = localStorage.getItem('selectedLang') || 'en';
+                    
+                    formContainer.innerHTML = `
+                        <div class="text-center py-8">
+                            <i class="fa-solid fa-circle-check text-5xl text-emerald-500 mb-4"></i>
+                            <h4 class="text-xl font-bold text-slate-900 mb-2">${translations[currentLang]['form-success-title']}</h4>
+                            <p class="text-gray-600 text-sm">${translations[currentLang]['form-success-desc']}</p>
+                        </div>
+                    `;
+                });
+            }
+        });
+
+        // Dil Değiştirme Fonksiyonu
         function setLanguage(lang) {
+            localStorage.setItem('selectedLang', lang);
+
             document.querySelectorAll('[data-lang]').forEach(element => {
                 const key = element.getAttribute('data-lang');
-                if (translations[lang][key]) {
+                if (translations[lang] && translations[lang][key]) {
                     element.textContent = translations[lang][key];
                 }
             });
 
+            // HTML İçeriği Barındıran Elementleri Güncelle
             document.getElementById('hero-title').innerHTML = translations[lang]['hero-title'];
             document.getElementById('hero-desc').textContent = translations[lang]['hero-desc'];
             document.getElementById('why-title').innerHTML = translations[lang]['why-title'];
             document.getElementById('why-desc').textContent = translations[lang]['why-desc'];
             document.getElementById('footer-disclaimer').textContent = translations[lang]['footer-disclaimer'];
 
+            // Aktif Dil Butonunu Boya
             const buttons = {
                 'en': document.getElementById('btn-en'),
                 'tr': document.getElementById('btn-tr'),
@@ -354,12 +487,20 @@
             };
 
             Object.keys(buttons).forEach(key => {
-                if (key === lang) {
-                    buttons[key].className = "px-2.5 py-1 rounded bg-amber-500 text-slate-950 transition";
-                } else {
-                    buttons[key].className = "px-2.5 py-1 rounded text-slate-400 hover:text-white transition";
+                if (buttons[key]) {
+                    if (key === lang) {
+                        buttons[key].className = "px-2.5 py-1 rounded bg-amber-500 text-slate-950 transition cursor-pointer";
+                    } else {
+                        buttons[key].className = "px-2.5 py-1 rounded text-slate-400 hover:text-white transition cursor-pointer";
+                    }
                 }
             });
+
+            // Hesaplayıcıyı dil değişimi sonrası yeniden çalıştır (Yıl/Years yazısı güncellensin)
+            const yearsInput = document.getElementById('calc-years');
+            if (yearsInput) {
+                yearsInput.dispatchEvent(new Event('input'));
+            }
         }
     </script>
 </body>
